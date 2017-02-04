@@ -1,0 +1,32 @@
+{
+  "name": "tricall-escala-front",
+  "version": "1.0.0",
+  "description": "Front end de sistema de controle de escala",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "gulp build"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-ui-router": "^0.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grgutorocha/tricall-escala-front.git"
+  },
+  "keywords": [
+    "escala",
+    "controle"
+  ],
+  "author": "Unknown Hackathon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grgutorocha/tricall-escala-front/issues"
+  },
+  "homepage": "https://github.com/grgutorocha/tricall-escala-front#readme"
+}
