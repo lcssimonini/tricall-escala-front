@@ -11,6 +11,10 @@ gulp.task('serve', function () {
         browserSync.reload();
     });
 
+    gulp.watch('app/index.html', function () {
+        browserSync.reload();
+    });
+
 });
 
 gulp.task('build', ['serve']);
