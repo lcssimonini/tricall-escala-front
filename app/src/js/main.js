@@ -394,6 +394,10 @@ appEscalaTricall.controller('ParametroSistemaController', [function () {
             {
                 "chave": "EMAIL_NOTIFICACAO",
                 "valor": "notificacao@softbox.com.br"
+            },
+            {
+                "chave": "API_AHGORA",
+                "valor": "http://api.ahgora.com.br"
             }
         ];
     };
