@@ -60,7 +60,8 @@
             <ul class="sidebar-menu">
                 <li ng-class="{ active: vm.isActive('/dashboard') }"><a href="/#!/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <li ng-class="{ active: vm.isActive('/colaborador') }"><a href="/#!/colaborador"><i class="fa fa-user"></i> <span>Colaborador</span></a></li>
-                <li ng-class="{ active: vm.isActive('/turno') }"><a href="/#!/turno"><i class="fa fa-calendar"></i> <span>Turnos</span></a></li>
+                <li ng-class="{ active: vm.isActive('/turno') }"><a href="/#!/turno"><i class="fa fa-clock-o"></i> <span>Turnos</span></a></li>
+                <li ng-class="{ active: vm.isActive('/escala') }"><a href="/#!/escala"><i class="fa fa-calendar"></i> <span>Escalas</span></a></li>
                 <li ng-class="{ active: vm.isActive('/parametro-sistema') }"><a href="/#!/parametro-sistema"><i class="fa fa-gear"></i> <span>Parâmetros de Sistema</span></a></li>
             </ul>
         </section>
@@ -78,10 +79,8 @@
 
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/chartjs/Chart.min.js"></script>
 <script src="dist/js/app.min.js"></script>
 <script src="dist/js/main.js"></script>
-<script src="dist/js/areaChart.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 var angular = require('angular');
 var uiRouter = require('angular-ui-router');
+var Chart = require('chart.js');
 
 var URL_API = 'https://autoscalegenerator.herokuapp.com';
 
@@ -48,6 +49,13 @@ appEscalaTricall.config(['$stateProvider', '$urlRouterProvider', function ($stat
         url: '/parametro-sistema',
         templateUrl: '../../pages/parametro-sistema.html',
         controller: 'ParametroSistemaController',
+        controllerAs: 'vm'
+    });
+
+    $stateProvider.state("escala", {
+        url: '/escala',
+        templateUrl: '../../pages/escala.html',
+        controller: 'EscalaController',
         controllerAs: 'vm'
     });
 
@@ -115,7 +123,52 @@ appEscalaTricall.controller('SidebarController', ['$location', function ($locati
 
 }]);
 
-appEscalaTricall.controller('DashboardController', [function () {
+appEscalaTricall.controller('DashboardController', ['$window', function ($window) {
+
+    var config = {
+        type: 'line',
+        data: {
+            labels: [
+                "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
+                "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00",
+                "20:00", "21:00", "22:00", "23:00"
+            ],
+            datasets: [
+                {
+                    label: "Colaboradores por Hora",
+                    fillColor: "rgba(60,141,188,0.9)",
+                    strokeColor: "rgba(60,141,188,0.8)",
+                    pointColor: "#3b8bba",
+                    pointStrokeColor: "rgba(60,141,188,1)",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(60,141,188,1)",
+                    data: [2, 5, 9, 13, 17, 25, 30, 29, 28, 26, 25, 23, 21, 20, 15, 11, 8, 4]
+                }
+            ]
+        },
+        options: {
+            showScale: true,
+            scaleShowGridLines: false,
+            scaleGridLineColor: "rgba(0,0,0,.05)",
+            scaleGridLineWidth: 1,
+            scaleShowHorizontalLines: true,
+            scaleShowVerticalLines: true,
+            bezierCurve: true,
+            bezierCurveTension: 0.3,
+            pointDot: false,
+            pointDotRadius: 4,
+            pointDotStrokeWidth: 1,
+            pointHitDetectionRadius: 20,
+            datasetStroke: true,
+            datasetStrokeWidth: 2,
+            datasetFill: true,
+            legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+            maintainAspectRatio: true,
+            responsive: true
+        }
+    };
+    var areaChart = new Chart(document.getElementById("areaChart"), config);
+
 }]);
 
 appEscalaTricall.controller('TurnoController', [function () {
@@ -419,4 +472,7 @@ appEscalaTricall.controller('EsqueciMinhaSenhaController', ['AuthenticationServi
 
     }
 
+}]);
+
+appEscalaTricall.controller('EscalaController', [function () {
 }]);
