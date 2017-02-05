@@ -83,5 +83,16 @@
 <script src="dist/js/app.min.js"></script>
 <script src="dist/js/main.js"></script>
 
+<script>
+    $(document).ready(function () {
+        $(".todo-list").sortable({
+            placeholder: "sort-highlight",
+            handle: ".handle",
+            forcePlaceholderSize: true,
+            zIndex: 999999
+        });
+    });
+</script>
+
 </body>
 </html>
