@@ -11,7 +11,7 @@ appEscalaTricall.config(['$stateProvider', '$urlRouterProvider', function ($stat
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state("login", {
-        url: '/',
+        url: '/login',
         templateUrl: '../../pages/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
@@ -25,7 +25,7 @@ appEscalaTricall.config(['$stateProvider', '$urlRouterProvider', function ($stat
     });
 
     $stateProvider.state("dashboard", {
-        url: '/dashboard',
+        url: '/',
         templateUrl: '../../pages/dashboard.html',
         controller: 'DashboardController',
         controllerAs: 'vm'
@@ -56,6 +56,13 @@ appEscalaTricall.config(['$stateProvider', '$urlRouterProvider', function ($stat
         url: '/escala',
         templateUrl: '../../pages/escala.html',
         controller: 'EscalaController',
+        controllerAs: 'vm'
+    });
+
+    $stateProvider.state("geracao-escala", {
+        url: '/geracao-escala',
+        templateUrl: '../../pages/geracao-escala.html',
+        controller: 'GeracaoEscalaController',
         controllerAs: 'vm'
     });
 
@@ -1826,5 +1833,9 @@ appEscalaTricall.controller('EscalaController', [function () {
     };
 
     vm.lista();
+
+}]);
+
+appEscalaTricall.controller('GeracaoEscalaController', [function() {
 
 }]);
