@@ -1,0 +1,58 @@
+<section class="content-header" ng-controller="ParametroSistemaController">
+<h1>Parâmetro de Sistema</h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        <button type="button" class="btn btn-primary btn-sm" ng-show="!vm.exibirFormulario" ng-click="vm.formulario()"><span class="fa fa-plus"></span> Inserir</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-show="vm.exibirFormulario" ng-click="vm.lista()"><span class="fa fa-arrow-left"></span> Voltar</button>
+                    </h3>
+                    <div class="box-tools" ng-show="!vm.exibirFormulario">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-model="busca">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+
+                    <table class="table table-hover" ng-show="!vm.exibirFormulario">
+                        <tr>
+                            <th>Chave</th>
+                            <th>Valor</th>
+                        </tr>
+                        <tr ng-repeat="item in vm.itens | filter: busca">
+                            <td>{{item.chave}}</td>
+                            <td>{{item.valor}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default" ng-click="vm.formulario(item)"><span class="fa fa-edit"></span></button>
+                                    <button type="button" class="btn btn-default" ng-click="vm.remover(item)"><span class="fa fa-remove"></span></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <form role="form" ng-show="vm.exibirFormulario">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="chave">Chave</label>
+                                <input type="text" class="form-control" id="chave" placeholder="Chave" value="{{vm.dados.chave}}" ng-model="vm.dados.chave">
+                            </div>
+                            <div class="form-group">
+                                <label for="valor">Valor</label>
+                                <input type="text" class="form-control" id="valor" placeholder="Valor" value="{{vm.dados.valor}}" ng-model="vm.dados.valor">
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-primary" ng-click="vm.salvar()">Salvar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

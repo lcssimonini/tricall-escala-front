@@ -1,0 +1,77 @@
+<section class="content-header" ng-controller="TurnoController">
+    <h1>Turno</h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        <button type="button" class="btn btn-primary btn-sm" ng-show="!vm.exibirFormulario" ng-click="vm.formulario()"><span class="fa fa-plus"></span> Inserir</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-show="vm.exibirFormulario" ng-click="vm.lista()"><span class="fa fa-arrow-left"></span> Voltar</button>
+                    </h3>
+                    <div class="box-tools" ng-show="!vm.exibirFormulario">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-model="busca">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+
+                    <table class="table table-hover" ng-show="!vm.exibirFormulario">
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Entrada</th>
+                            <th>Saída</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                        <tr ng-repeat="item in vm.itens | filter: busca">
+                            <td>{{item.id}}</td>
+                            <td>{{item.titulo}}</td>
+                            <td>{{item.entrada}}</td>
+                            <td>{{item.saida}}</td>
+                            <td>{{item.tipo}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default" ng-click="vm.formulario(item)"><span class="fa fa-edit"></span></button>
+                                    <button type="button" class="btn btn-default" ng-click="vm.remover(item)"><span class="fa fa-remove"></span></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <form role="form" ng-show="vm.exibirFormulario">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="titulo">Título</label>
+                                <input type="text" class="form-control" id="titulo" placeholder="Título" value="{{vm.dados.matricula}}" ng-model="vm.dados.titulo">
+                            </div>
+                            <div class="form-group">
+                                <label for="entrada">Horário de Entrada</label>
+                                <input type="text" class="form-control" id="entrada" placeholder="Entrada" value="{{vm.dados.entrada}}" ng-model="vm.dados.entrada">
+                            </div>
+                            <div class="form-group">
+                                <label for="saida">Horário de Saída</label>
+                                <input type="text" class="form-control" id="saida" placeholder="Saída" value="{{vm.dados.saida}}" ng-model="vm.dados.saida">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo</label>
+                                <select class="form-control" ng-model="vm.dados.tipo">
+                                    <option value="">Defina uma situação</option>
+                                    <option value="NORMAL">Normal</option>
+                                    <option value="REDUZIDO">Reduzido</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-primary" ng-click="vm.salvar()">Salvar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,89 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="appEscalaTricall">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Escala</title>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Escala</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-  <header class="main-header">
 
-    <a href="/" class="logo">
-      <span class="logo-mini"><b>ET</b></span>
-      <span class="logo-lg"><b>Escala</b>Tricall</span>
-    </a>
+    <header class="main-header">
 
-    <nav class="navbar navbar-static-top" role="navigation">
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Glauber Pinheiro</span>
+        <a href="javascript:void(0);" class="logo">
+            <span class="logo-mini"><b>GES</b></span>
+            <span class="logo-lg"><b>Escala</b>Softbox</span>
+        </a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="javascript:void(0);" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
             </a>
-            <ul class="dropdown-menu">
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Minha Conta</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sair</a>
-                </div>
-              </li>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs">Glauber Pinheiro</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="javascript:void(0);" class="btn btn-default btn-flat">Minha Conta</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="javascript:void(0);" class="btn btn-default btn-flat">Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="main-sidebar" ng-controller="SidebarController">
+        <section class="sidebar">
+            <ul class="sidebar-menu">
+                <li ng-class="{ active: vm.isActive('/dashboard') }"><a href="/#!/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li ng-class="{ active: vm.isActive('/colaborador') }"><a href="/#!/colaborador"><i class="fa fa-user"></i> <span>Colaborador</span></a></li>
+                <li ng-class="{ active: vm.isActive('/turno') }"><a href="/#!/turno"><i class="fa fa-calendar"></i> <span>Turnos</span></a></li>
+                <li ng-class="{ active: vm.isActive('/parametro-sistema') }"><a href="/#!/parametro-sistema"><i class="fa fa-gear"></i> <span>Parâmetros de Sistema</span></a></li>
             </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+        </section>
+    </aside>
 
-  <aside class="main-sidebar">
-    <section class="sidebar">
-      <ul class="sidebar-menu">
-        <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="#"><i class="fa fa-user"></i> <span>Colaborador</span></a></li>
-        <li><a href="#"><i class="fa fa-calendar"></i> <span>Turnos</span></a></li>
-      </ul>
-    </section>
-  </aside>
+    <div class="content-wrapper">
+        <ui-view></ui-view>
+    </div>
 
-  <div class="content-wrapper">
-    <section class="content-header">
-      <h1>Dashboard</h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      </ol>
-    </section>
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2016 <a href="http://www.softbox.com.br" target="_blank">Softbox</a>.</strong> Todos os direitos reservados.
+    </footer>
 
-    <section class="content">
-
-    </section>
-  </div>
-
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2016 <a href="http://www.softbox.com.br" target="_blank">Softbox</a>.</strong> Todos os direitos reservados.
-  </footer>
 </div>
 
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/chartjs/Chart.min.js"></script>
 <script src="dist/js/app.min.js"></script>
+<script src="dist/js/main.js"></script>
+<script src="dist/js/areaChart.js"></script>
+
 </body>
 </html>
