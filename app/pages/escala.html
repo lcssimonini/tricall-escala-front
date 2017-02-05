@@ -2,5 +2,109 @@
     <h1>Escalas</h1>
 </section>
 <section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        <select class="form-control input-sm">
+                            <option>Janeiro</option>
+                            <option>Fevereiro</option>
+                            <option>Março</option>
+                            <option>Abril</option>
+                            <option>Maio</option>
+                            <option>Junho</option>
+                            <option>Julho</option>
+                            <option>Agosto</option>
+                            <option>Setembro</option>
+                            <option>Outubro</option>
+                            <option>Novembro</option>
+                            <option>Dezembro</option>
+                        </select>
+                    </h3>
+                    <div class="box-tools" ng-show="!vm.exibirFormulario">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-model="busca">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
 
+                    <table class="table table-hover" ng-show="!vm.exibirFormulario">
+                        <tr>
+                            <th style="width: 100px;">Nome</th>
+                            <th style="width: 100px;">Turno</th>
+                            <th>01</th>
+                            <th>02</th>
+                            <th>03</th>
+                            <th>04</th>
+                            <th>05</th>
+                            <th>06</th>
+                            <th>07</th>
+                            <th>08</th>
+                            <th>09</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                            <th>20</th>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                            <th>25</th>
+                            <th>26</th>
+                            <th>27</th>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                            <th>31</th>
+                        </tr>
+                        <tr ng-repeat="item in vm.itens | filter: busca">
+                            <td>{{item.nome}}</td>
+                            <td>{{item.turno}}</td>
+                            <td class="bg-red">{{item.d01}}</td>
+                            <td class="bg-gray">{{item.d02}}</td>
+                            <td class="bg-green">{{item.d03}}</td>
+                            <td class="bg-blue">{{item.d04}}</td>
+                            <td class="bg-yellow">{{item.d05}}</td>
+                            <td class="bg-aqua">{{item.d06}}</td>
+                            <td class="bg-red">{{item.d07}}</td>
+                            <td class="bg-gray">{{item.d08}}</td>
+                            <td class="bg-green">{{item.d09}}</td>
+                            <td class="bg-blue">{{item.d10}}</td>
+                            <td class="bg-yellow">{{item.d11}}</td>
+                            <td class="bg-aqua">{{item.d12}}</td>
+                            <td class="bg-red">{{item.d13}}</td>
+                            <td class="bg-gray">{{item.d14}}</td>
+                            <td class="bg-green">{{item.d15}}</td>
+                            <td class="bg-blue">{{item.d16}}</td>
+                            <td class="bg-yellow">{{item.d17}}</td>
+                            <td class="bg-aqua">{{item.d18}}</td>
+                            <td class="bg-red">{{item.d19}}</td>
+                            <td class="bg-gray">{{item.d20}}</td>
+                            <td class="bg-green">{{item.d21}}</td>
+                            <td class="bg-blue">{{item.d22}}</td>
+                            <td class="bg-yellow">{{item.d23}}</td>
+                            <td class="bg-aqua">{{item.d24}}</td>
+                            <td class="bg-red">{{item.d25}}</td>
+                            <td class="bg-gray">{{item.d26}}</td>
+                            <td class="bg-green">{{item.d27}}</td>
+                            <td class="bg-blue">{{item.d28}}</td>
+                            <td class="bg-yellow">{{item.d29}}</td>
+                            <td class="bg-aqua">{{item.d30}}</td>
+                            <td class="bg-aqua">{{item.d31}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
