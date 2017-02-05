@@ -4,10 +4,15 @@
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
+            <button class="btn btn-primary"><span class="fa fa-link"></span> Exportar para Sistema Ahgora</button><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">
-                        <select class="form-control input-sm">
+                        <select class="form-control form-inline input-sm">
                             <option>Janeiro</option>
                             <option>Fevereiro</option>
                             <option>Março</option>
@@ -22,15 +27,15 @@
                             <option>Dezembro</option>
                         </select>
                     </h3>
-                    <div class="box-tools" ng-show="!vm.exibirFormulario">
+                    <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" ng-model="busca">
+                            <input type="text" name="table_search" class="form-control form-inline pull-right" placeholder="Search" ng-model="busca">
                         </div>
                     </div>
                 </div>
                 <div class="box-body table-responsive no-padding">
 
-                    <table class="table table-hover" ng-show="!vm.exibirFormulario">
+                    <table class="table table-hover">
                         <tr>
                             <th style="width: 100px;">Nome</th>
                             <th style="width: 100px;">Turno</th>
